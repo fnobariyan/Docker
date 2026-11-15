@@ -1,0 +1,19 @@
+#show volume list
+  docker volume ls
+
+#Create volume
+  docker volume create VILUME-NAME
+  *link to /var/lib/docker/volumes
+  
+#docker rn -itd -v myvol:/data --name mycontainer ubuntu
+  *-v docker-host-vol:container-path:permision(ro-rw)
+  **if host's path or container's path are not exsist, it's create by volume
+
+ docker volume ls -f name=***
+ docker volume inspect myvol
+
+#Show docker's volume info 
+    docker ps -a --filter name=vol2
+    
+
+    
