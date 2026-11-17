@@ -36,6 +36,12 @@ docker run -itd --name xxx --mount type=bind,source=DOCKER-HOST-PATH,target=CONT
 Specifically, a path from the first container is mapped to a volume, 
 and a path from the second container is mapped to that same volume;
 this results in these two paths (directories) being shared between the two containers.
+
+#Create tmpfs
+docker run -it --name n1 --tmpfs /app ubuntu
+*when this container exited /app will be removed 
+
+
     
 
     
