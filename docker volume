@@ -14,6 +14,28 @@
 
 #Show docker's volume info 
     docker ps -a --filter name=vol2
+
+#Create NFS docker volume
+ docker volume create --driver local --opt type=nfs --opt o=addr=192.168.101.100 --opt drive=:/volume1/data myvol
+
+#Deleted volume
+ docker volume rm CONTAINER-NAME/ID
+*YOU CANNOT REMOVE A VOLUME THAT IS USE BY A CONTAINER
+
+#Remove all unused local volume
+docker volume prune
+
+#Useing --mount flag in  docker run command:for persistant data
+docker run -itd --name xxx --mount type=volume,source=VOLUME-NAME,target=CONTAINER-PATH ubuntu
+
+#Useing --mount flag in  docker run command:for persistant data[BINDMODE]
+docker run -itd --name xxx --mount type=bind,source=DOCKER-HOST-PATH,target=CONTAINER-PATH ubuntu
+
+#Sharing volume
+**Sharing directories and data between two containers is accomplished using volumes.
+Specifically, a path from the first container is mapped to a volume, 
+and a path from the second container is mapped to that same volume;
+this results in these two paths (directories) being shared between the two containers.
     
 
     
