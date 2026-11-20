@@ -1,0 +1,8 @@
+#List of your network
+  docker ls network
+
+#List of your network and add filter
+  docker ls network -f name=bridge
+
+#Detail and info from a network
+  docker network inspect
