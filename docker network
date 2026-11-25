@@ -6,3 +6,28 @@
 
 #Detail and info from a network
   docker network inspect
+
+#Display detailed info
+ docker network inspect bridge
+
+#Create network docker
+ docker network create -d(DEFULT) bridge NEKWORK-NAME
+
+#Connect running container to your bridge network
+ docker network connect NETWORK-NAME CONTAINER-NAME
+
+#DisConnect running container to your bridge network
+ docker network disconnect NETWORK-NAME CONTAINER-NAME
+
+#Port Mapping(EXAMPLE)
+ docker run -itd --name CONTAINER-NAME --network NETWORK-NAME -p DOCKER-HOST-PORT:CONTAINER-PORT nginx
+
+##Set custon static ip on docker containers:
+ #create container: docker run -itd --name CONTAINER-NAME ubuntu
+##create network: docker network create --subnet 192.168.100.0/24 NETWORK-NAME
+##connet them to each other: docker network connect --ip 192.168.100.10  NETWORK-NAME CONTAINER-NAME
+
+
+
+
+
