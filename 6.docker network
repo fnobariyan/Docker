@@ -27,6 +27,13 @@
 ##create network: docker network create --subnet 192.168.100.0/24 NETWORK-NAME
 ##connet them to each other: docker network connect --ip 192.168.100.10  NETWORK-NAME CONTAINER-NAME
 
+#Network troubleshoot-nicolaka/netshoot
+ docker run -it --net container:CONTAINER-NAME nicolaka/netshoot
+ docker run --rm --net container:nginx nicolaka/netshoot curl localhost
+*after running and curling this container will be exit*
+
+
+
 
 
 
